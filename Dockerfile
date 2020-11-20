@@ -1,6 +1,7 @@
 FROM node:14
 
-RUN npm -g install sails
+RUN npm install
+RUN npm install -g sails
 
 RUN mkdir /app
 

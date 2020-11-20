@@ -3,9 +3,11 @@ services:
   sails:
     build:
       context: .
+    working_dir: /app
     image: sails:latest
     container_name: sails
     ports:
       - "8080:1337"
     volumes:
       - ./:/app
+    command: sails lift
