@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  sails:
+    build:
+      context: .
+    image: sails:latest
+    container_name: sails
+    ports:
+      - "8080:1337"
+    volumes:
+      - ./:/app
