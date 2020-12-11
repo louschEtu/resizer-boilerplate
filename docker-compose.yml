@@ -6,8 +6,10 @@ services:
     working_dir: /app
     image: sails:latest
     container_name: sails
+    environment:
+      - NODE_ENV=development
     ports:
       - "8080:1337"
     volumes:
       - ./:/app
-    command: sails lift
+    command: bash start.sh

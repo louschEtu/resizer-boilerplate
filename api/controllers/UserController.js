@@ -5,20 +5,43 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+
+
+
+
+const passport = require('passport');
+
 module.exports = {
 
   /**
    * `UserController.login()`
    */
-  login: async function (req, res) {
-    throw 'Not implemented';
+  login: function (req, res) {
+    // passport.authenticate('local', function (err, user, info) {
+    //   if ((err) || (!user)) {
+    //     return res.send({
+    //       message: info.message,
+    //       user
+    //     });
+    //   }
+    //   req.logIn(user, function (err) {
+    //     if (err) res.send(err);
+    //     return res.send({
+    //       message: info.message,
+    //       user
+    //     });
+    //   });
+    // })(req, res);
+    passport.authenticate('local', { successRedirect: "/", failureRedirect: "/login" })(req, res);
   },
+
 
   /**
    * `UserController.logout()`
    */
-  logout: async function (req, res) {
-    throw 'Not implemented';
+  logout: function (req, res) {
+    req.logout();
+    res.redirect('/');
   },
 
   /**
@@ -35,6 +58,13 @@ module.exports = {
       }
       return res.redirect('/login');
     });
+  },
+
+  /**
+   * `UserController.toto()`
+   */
+  toto: async function (req, res) {
+    return 'toto';
   }
 };
 
