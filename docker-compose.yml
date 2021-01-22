@@ -20,8 +20,16 @@ services:
     environment:
       - NODE_ENV=development
       - DATABASE_URL=mysql://root:123@db:3306/resizer
+      - REDIS_URL=redis://redis:6379
     ports:
       - "8080:1337"
     volumes:
       - ./:/app
     command: bash start.sh
+
+  redis:
+    image: redis
+    container_name: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - ./redis:/data

@@ -35,5 +35,5 @@ module.exports.session = {
   // isSessionDisabled: function (req){
   //   return !!req.path.match(req._sails.LOOKS_LIKE_ASSET_RX);
   // },
-
+  url: process.env.REDIS_URL,
 };

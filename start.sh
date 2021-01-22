@@ -1,3 +1,3 @@
 npm install
 npm update
-nodemon sails lift
+nodemon sails lift --redis
