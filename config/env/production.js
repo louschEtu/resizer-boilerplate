@@ -253,10 +253,10 @@ module.exports = {
     ***************************************************************************/
     adapter: '@sailshq/socket.io-redis',
     url: process.env.REDIS_URL,
-    // onlyAllowOrigins: [
-    //   'https://localhost:5001',
-    //   'https://localhost:6379'
-    // ],
+    onlyAllowOrigins: [
+      'https://localhost:5001',
+      'https://localhost:6379'
+    ],
 
 
     /***************************************************************************
