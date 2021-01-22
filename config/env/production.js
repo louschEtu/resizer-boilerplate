@@ -168,7 +168,8 @@ module.exports = {
   *                                                                          *
   ***************************************************************************/
   session: {
-
+    adapter: '@sailshq/connect-redis',
+    url: process.env.REDIS_URL,
     /***************************************************************************
     *                                                                          *
     * Production session store configuration.                                  *
@@ -251,6 +252,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     adapter: '@sailshq/socket.io-redis',
+    url: process.env.REDIS_URL,
     // onlyAllowOrigins: [
     //   'https://localhost:5001',
     //   'https://localhost:6379'
