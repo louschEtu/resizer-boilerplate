@@ -250,9 +250,11 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    onlyAllowOrigins: [
-      'https://localhost:5001',
-    ],
+    adapter: '@sailshq/socket.io-redis',
+    // onlyAllowOrigins: [
+    //   'https://localhost:5001',
+    //   'https://localhost:6379'
+    // ],
 
 
     /***************************************************************************
